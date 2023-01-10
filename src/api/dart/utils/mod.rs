@@ -5,7 +5,7 @@ mod string;
 
 use std::{future::Future, marker::PhantomData};
 
-use dart_sys::Dart_Handle;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
     api::DartValue,

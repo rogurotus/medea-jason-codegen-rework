@@ -556,7 +556,7 @@ caused::derive);
 /// mod peer_connection {
 ///     use std::{os::raw::c_char, ptr};
 ///
-///     use dart_sys::Dart_Handle;
+///     use xayn_dart_api_dl_sys::Dart_Handle;
 ///
 ///     extern "C" {
 ///         // This documentation will be injected to the generated
@@ -581,7 +581,7 @@ caused::derive);
 /// mod peer_connection {
 ///     use std::{ptr, os::raw::c_char};
 ///
-///     use dart_sys::Dart_Handle;
+///     use xayn_dart_api_dl_sys::Dart_Handle;
 ///
 ///     type PeerConnectionCreateOfferFunction =
 ///         extern "C" fn(peer: Dart_Handle) -> ptr::NonNull<c_char>;

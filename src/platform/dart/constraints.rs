@@ -4,7 +4,7 @@
 //! [0]: https://w3.org/TR/mediacapture-streams#media-track-constraints
 //! [1]: https://w3.org/TR/mediacapture-streams#mediastreamconstraints
 
-use dart_sys::Dart_Handle;
+use xayn_dart_api_dl_sys::Dart_Handle;
 use derive_more::From;
 use medea_macro::dart_bridge;
 
@@ -20,7 +20,7 @@ use crate::{
 
 #[dart_bridge("flutter/lib/src/native/platform/constraints.g.dart")]
 mod constraints {
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValue;
 

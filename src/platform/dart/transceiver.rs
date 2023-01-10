@@ -20,7 +20,7 @@ use crate::{
 mod transceiver {
     use std::ptr;
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::{api::DartValueArg, platform::dart::utils::handle::DartHandle};
 

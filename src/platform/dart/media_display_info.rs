@@ -13,7 +13,7 @@ use super::utils::NonNullDartValueArgExt as _;
 mod media_display_info {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

@@ -2,7 +2,7 @@
 //!
 //! [1]: https://w3.org/TR/webrtc/#rtciceserver-dictionary
 
-use dart_sys::Dart_Handle;
+use xayn_dart_api_dl_sys::Dart_Handle;
 use medea_client_api_proto::IceServer;
 use medea_macro::dart_bridge;
 
@@ -12,7 +12,7 @@ use crate::{api::string_into_c_str, platform::utils::handle::DartHandle};
 mod ice_servers {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

@@ -12,8 +12,8 @@
 
 use std::{marker::PhantomData, time::Duration};
 
-use dart_sys::{Dart_Handle, Dart_PersistentHandle};
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::{Dart_PersistentHandle, Dart_Handle};
 
 use crate::{
     api::{utils::DartError, DartValue},
@@ -27,7 +27,7 @@ use super::dart_api::{
 
 #[dart_bridge("flutter/lib/src/native/ffi/completer.g.dart")]
 mod completer {
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::{utils::DartError, DartValue};
 

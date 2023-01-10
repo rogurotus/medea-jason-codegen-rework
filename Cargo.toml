@@ -55,6 +55,9 @@ serde_json = "1.0"
 tracerr = "0.3"
 url = "2.3"
 
+xayn-dart-api-dl-sys = { git = "https://github.com/rogurotus/xayn_dart_api_dl.git", branch = "temp"}
+xayn-dart-api-dl = { git = "https://github.com/rogurotus/xayn_dart_api_dl.git", branch = "temp"}
+
 [target.'cfg(target_os = "android")'.dependencies]
 android_logger = "0.11"
 
@@ -62,7 +65,6 @@ android_logger = "0.11"
 simple_logger = "4.0"
 
 [target.'cfg(not(target_family = "wasm"))'.dependencies]
-dart-sys = "2.0"
 libc = "0.2"
 
 [target.'cfg(target_family = "wasm")'.dependencies]

@@ -8,8 +8,8 @@ use std::{
     ptr,
 };
 
-use dart_sys::Dart_Handle;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
     api::{propagate_panic, DartValue, DartValueArg},
@@ -22,18 +22,17 @@ use crate::{
 mod callback {
     use std::ptr;
 
-    use dart_sys::Dart_Handle;
 
     use crate::platform::dart::utils::callback::Callback;
 
     extern "C" {
         /// Returns a [`Dart_Handle`] to a newly created Dart callback accepting
         /// 2 arguments that will proxy calls to the given Rust callback.
-        pub fn call_two_arg_proxy(cb: ptr::NonNull<Callback>) -> Dart_Handle;
+        pub fn call_two_arg_proxy(cb: ptr::NonNull<Callback>) -> xayn_dart_api_dl_sys::Dart_Handle;
 
         /// Returns a [`Dart_Handle`] to a newly created Dart callback that will
         /// proxy calls to the associated Rust callback.
-        pub fn call_proxy(cb: ptr::NonNull<Callback>) -> Dart_Handle;
+        pub fn call_proxy(cb: ptr::NonNull<Callback>) -> xayn_dart_api_dl_sys::Dart_Handle;
     }
 }
 
@@ -232,7 +231,7 @@ extern "C" fn callback_finalizer(_: *mut c_void, cb: *mut c_void) {
 pub mod tests {
     #![allow(clippy::missing_safety_doc)]
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

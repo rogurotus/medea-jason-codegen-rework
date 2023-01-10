@@ -147,7 +147,7 @@ mod mock {
         missing_copy_implementations
     )]
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
     use futures::future;
     use tracerr::{Trace, Traced};
 

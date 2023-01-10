@@ -1,6 +1,6 @@
 use std::ptr;
 
-use dart_sys::Dart_Handle;
+use xayn_dart_api_dl_sys::Dart_Handle;
 use tracerr::Traced;
 
 use crate::{
