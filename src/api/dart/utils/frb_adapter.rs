@@ -1,5 +1,5 @@
-use dart_sys::Dart_Handle;
 use flutter_rust_bridge::DartOpaque;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
     api::ForeignClass,

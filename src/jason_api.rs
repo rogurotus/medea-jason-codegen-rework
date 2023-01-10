@@ -30,8 +30,6 @@ impl<T: DartSafe> ForeignClass for RustOpaque<T> {}
 
 // -------------------------------------------------------------------
 
-pub use dart_sys::Dart_Handle;
-
 use tracerr::Traced;
 
 pub use crate::connection::ConnectionHandle;

@@ -1197,9 +1197,8 @@ dependencies = [
 
 [[package]]
 name = "flutter_rust_bridge"
-version = "1.58.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e755f236c79aa45b485c25b116ce1145db06f112ff752c84dfa26c36388ecaed"
+version = "1.60.0"
+source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#5982ccd9888cb7ac3616d86c1764fda333da91ff"
 dependencies = [
  "allo-isolate",
  "anyhow",
@@ -1217,13 +1216,14 @@ dependencies = [
  "threadpool",
  "wasm-bindgen",
  "web-sys",
+ "xayn-dart-api-dl",
+ "xayn-dart-api-dl-sys",
 ]
 
 [[package]]
 name = "flutter_rust_bridge_macros"
-version = "1.58.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "054b91aa9af68fb60772432faafce6ed25a0dcbe7b7a6645af9d3495fbd3bb26"
+version = "1.60.0"
+source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#5982ccd9888cb7ac3616d86c1764fda333da91ff"
 
 [[package]]
 name = "fnv"

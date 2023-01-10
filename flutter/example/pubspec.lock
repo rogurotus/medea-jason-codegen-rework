@@ -7,14 +7,14 @@ packages:
       name: _fe_analyzer_shared
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "31.0.0"
+    version: "47.0.0"
   analyzer:
     dependency: transitive
     description:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.8.0"
+    version: "4.7.0"
   archive:
     dependency: transitive
     description:
@@ -77,14 +77,7 @@ packages:
       name: checked_yaml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
-  cli_util:
-    dependency: transitive
-    description:
-      name: cli_util
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.5"
+    version: "2.0.2"
   clock:
     dependency: transitive
     description:
@@ -133,7 +126,7 @@ packages:
       name: dart_style
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.1"
+    version: "2.2.4"
   fake_async:
     dependency: transitive
     description:
@@ -175,10 +168,12 @@ packages:
   flutter_rust_bridge:
     dependency: transitive
     description:
-      name: flutter_rust_bridge
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.58.2"
+      path: frb_dart
+      ref: dart-api-dl
+      resolved-ref: "5982ccd9888cb7ac3616d86c1764fda333da91ff"
+      url: "https://github.com/rogurotus/flutter_rust_bridge.git"
+    source: git
+    version: "1.60.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -242,14 +237,14 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.6.0"
+    version: "4.7.0"
   json_serializable:
     dependency: "direct dev"
     description:
       name: json_serializable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.3.1"
+    version: "6.5.4"
   logging:
     dependency: transitive
     description:
@@ -274,10 +269,12 @@ packages:
   medea_flutter_webrtc:
     dependency: transitive
     description:
-      name: medea_flutter_webrtc
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.8.0-dev+rev.f41943bb2e00fbeac92946cc89652fe04185a394"
+      path: "."
+      ref: temp-frb-deps
+      resolved-ref: "6a7054c64d16c558779ac47b0d2251bb12dacb75"
+      url: "https://github.com/instrumentisto/flutter-webrtc.git"
+    source: git
+    version: "0.8.0-dev"
   medea_jason:
     dependency: "direct main"
     description:
@@ -408,14 +405,14 @@ packages:
       name: source_gen
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.2"
+    version: "1.2.6"
   source_helper:
     dependency: transitive
     description:
       name: source_helper
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.3.2"
+    version: "1.3.3"
   source_span:
     dependency: transitive
     description:
