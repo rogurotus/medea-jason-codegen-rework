@@ -2,7 +2,7 @@
 //!
 //! [1]: https://w3.org/TR/webrtc/#dom-rtcpeerconnection
 
-use dart_sys::Dart_Handle;
+use xayn_dart_api_dl_sys::Dart_Handle;
 use derive_more::From;
 use medea_macro::dart_bridge;
 
@@ -12,7 +12,7 @@ use crate::platform::dart::utils::{dart_string_into_rust, handle::DartHandle};
 mod ice_candidate {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

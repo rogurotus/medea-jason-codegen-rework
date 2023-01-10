@@ -9,7 +9,7 @@
 
 use std::marker::PhantomData;
 
-use dart_sys::Dart_PersistentHandle;
+use xayn_dart_api_dl_sys::{Dart_Handle, Dart_PersistentHandle};
 use medea_macro::dart_bridge;
 
 use crate::{api::DartValue, platform::Callback};
@@ -21,7 +21,7 @@ use super::dart_api::{
 
 #[dart_bridge("flutter/lib/src/native/ffi/function.g.dart")]
 mod function {
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValue;
 

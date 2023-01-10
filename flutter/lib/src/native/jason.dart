@@ -86,11 +86,12 @@ DynamicLibrary _dl_load() {
           ? DynamicLibrary.executable()
           : DynamicLibrary.open(path);
 
-  var initResult = _dl.lookupFunction<IntPtr Function(Pointer<Void>),
-          int Function(Pointer<Void>)>('init_dart_api_dl')(
-      NativeApi.initializeApiDLData);
+  var initResult = _dl.lookupFunction<
+      Bool Function(Pointer<Void>),
+      bool Function(
+          Pointer<Void>)>('init_dart_api_dl')(NativeApi.initializeApiDLData);
 
-  if (initResult != 0) {
+  if (!initResult) {
     throw 'Failed to initialize Dart API. Code: $initResult';
   }
   callback.registerFunctions(_dl);

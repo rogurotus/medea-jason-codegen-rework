@@ -3,7 +3,7 @@
 
 use std::{fmt, rc::Rc};
 
-use dart_sys::{Dart_Handle, Dart_PersistentHandle};
+use xayn_dart_api_dl_sys::{Dart_Handle, Dart_PersistentHandle};
 use medea_macro::dart_bridge;
 
 use crate::platform::{
@@ -23,7 +23,7 @@ use crate::platform::{
 mod handle {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     extern "C" {
         /// Returns a string representation of a Dart type behind the provided

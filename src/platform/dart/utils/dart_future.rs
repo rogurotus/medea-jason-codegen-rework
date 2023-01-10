@@ -4,9 +4,9 @@
 
 use std::{fmt, future::Future, marker::PhantomData, ptr};
 
-use dart_sys::Dart_Handle;
 use futures::channel::oneshot;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
     api::{propagate_panic, DartValue, DartValueArg, Error as DartError},
@@ -21,7 +21,7 @@ use crate::{
 mod future_from_dart {
     use std::ptr;
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::platform::dart::utils::dart_future::FutureFromDart;
 
@@ -229,7 +229,7 @@ pub(crate) use dart_enum_try_into;
 pub mod tests {
     #![allow(clippy::missing_safety_doc)]
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::{
         api::err::FormatException,

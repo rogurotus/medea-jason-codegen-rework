@@ -4,7 +4,7 @@
 
 use std::future::Future;
 
-use dart_sys::Dart_Handle;
+use xayn_dart_api_dl_sys::Dart_Handle;
 use medea_macro::dart_bridge;
 
 use crate::{
@@ -25,7 +25,7 @@ use crate::{
 mod media_stream_track {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

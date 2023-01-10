@@ -27,7 +27,7 @@ type Result<T, E = Traced<TransportError>> = std::result::Result<T, E>;
 mod transport {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     extern "C" {
         /// [Connects][1] to the provided `url` and returns the created

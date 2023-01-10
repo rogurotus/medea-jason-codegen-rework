@@ -2,6 +2,7 @@
 
 pub mod callback;
 pub mod completer;
+#[allow(non_snake_case)]
 pub mod dart_api;
 pub mod dart_future;
 pub mod function;

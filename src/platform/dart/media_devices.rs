@@ -28,7 +28,7 @@ use super::{
 mod media_devices {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     extern "C" {
         /// Returns information about available media input devices.

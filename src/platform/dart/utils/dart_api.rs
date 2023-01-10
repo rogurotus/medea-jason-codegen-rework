@@ -4,16 +4,8 @@
 
 use std::{ffi::c_void, os::raw::c_char, ptr};
 
-use dart_sys::{Dart_CObject, Dart_Handle, Dart_PersistentHandle, Dart_Port};
-
-#[link(name = "trampoline")]
-extern "C" {
-    /// Initializes Dynamically Linked Dart API usage. Accepts
-    /// [`NativeApi.initializeApiDLData`][1] that must be retrieved in Dart
-    /// code. Must be called before calling any other Dart API method.
-    ///
-    /// [1]: https://api.dart.dev/dart-ffi/NativeApi/initializeApiDLData.html
-    pub fn Dart_InitializeApiDL(obj: *mut c_void) -> libc::intptr_t;
+use xayn_dart_api_dl::initialize_dart_api_dl;
+use xayn_dart_api_dl_sys::{Dart_Handle, Dart_PersistentHandle, Dart_Port, Dart_CObject, Dart_PropagateError_DL, Dart_GetError_DL, Dart_NewPersistentHandle_DL, Dart_HandleFromPersistent_DL, Dart_DeletePersistentHandle_DL, Dart_PostCObject_DL, Dart_NewFinalizableHandle_DL, Dart_IsError_DL, Dart_FinalizableHandle};
 
     /// Allocates a [`Dart_PersistentHandle`] for provided [`Dart_Handle`].
     ///
@@ -21,7 +13,9 @@ extern "C" {
     /// unless they are explicitly deallocated.
     pub fn Dart_NewPersistentHandle_DL_Trampolined(
         object: Dart_Handle,
-    ) -> Dart_PersistentHandle;
+    ) -> Dart_PersistentHandle {
+        unsafe { Dart_NewPersistentHandle_DL.unwrap()(object)}
+    }
 
     /// Allocates a [`Dart_Handle`] in the current scope from the given
     /// [`Dart_PersistentHandle`].
@@ -29,12 +23,16 @@ extern "C" {
     /// This doesn't affect the provided [`Dart_PersistentHandle`]'s lifetime.
     pub fn Dart_HandleFromPersistent_DL_Trampolined(
         object: Dart_PersistentHandle,
-    ) -> Dart_Handle;
+    ) -> Dart_Handle {
+        unsafe { Dart_HandleFromPersistent_DL.unwrap()(object)}
+    }
 
     /// Deallocates the provided [`Dart_PersistentHandle`].
     pub fn Dart_DeletePersistentHandle_DL_Trampolined(
         object: Dart_PersistentHandle,
-    );
+    ) {
+        unsafe { Dart_DeletePersistentHandle_DL.unwrap()(object)}
+    }
 
     /// Posts a `message` on some port. It will contain a [`Dart_CObject`]
     /// object graph rooted in the `message`.
@@ -53,7 +51,9 @@ extern "C" {
     pub fn Dart_PostCObject_DL_Trampolined(
         port_id: Dart_Port,
         message: *mut Dart_CObject,
-    ) -> bool;
+    ) -> bool {
+        unsafe { Dart_PostCObject_DL.unwrap()(port_id, message)}
+    }
 
     /// Allocates a finalizable handle for an object.
     ///
@@ -76,12 +76,16 @@ extern "C" {
         peer: *mut c_void,
         external_allocation_size: libc::intptr_t,
         callback: extern "C" fn(*mut c_void, *mut c_void),
-    ) -> Dart_Handle;
+    ) -> Dart_FinalizableHandle {
+        unsafe { Dart_NewFinalizableHandle_DL.unwrap()(object, peer, external_allocation_size, Some(callback))}
+    }
 
     /// Checks whether the provided [`Dart_Handle`] represents a Dart error.
     ///
     /// Should be called on the current isolate.
-    pub fn Dart_IsError_DL_Trampolined(object: Dart_Handle) -> bool;
+    pub fn Dart_IsError_DL_Trampolined(object: Dart_Handle) -> bool {
+        unsafe { Dart_IsError_DL.unwrap()(object)}
+    }
 
     /// Returns the error message from the provided Dart error handle.
     ///
@@ -91,7 +95,10 @@ extern "C" {
     /// `object` represents a Dart error, or an empty C string ("") otherwise.
     pub fn Dart_GetError_DL_Trampolined(
         object: Dart_Handle,
-    ) -> ptr::NonNull<c_char>;
+    ) -> ptr::NonNull<c_char> {
+        unsafe { let a: *mut c_char  =  Dart_GetError_DL.unwrap()(object) as _;
+        ptr::NonNull::from(a.as_mut().unwrap())
+    }}
 
     /// Propagates the given Dart error to the Dart side.
     ///
@@ -99,8 +106,9 @@ extern "C" {
     /// will be rethrown in the standard way: walking up Dart frames until an
     /// appropriate `catch` block is found, than executing `finally` blocks, and
     /// so on.
-    pub fn Dart_PropagateError_DL_Trampolined(object: Dart_Handle);
-}
+    pub fn Dart_PropagateError_DL_Trampolined(object: Dart_Handle) {
+        unsafe { Dart_PropagateError_DL.unwrap()(object);}
+    }
 
 /// Initializes usage of Dynamically Linked Dart API.
 ///
@@ -113,6 +121,6 @@ extern "C" {
 #[no_mangle]
 pub unsafe extern "C" fn init_dart_api_dl(
     obj: ptr::NonNull<c_void>,
-) -> libc::intptr_t {
-    Dart_InitializeApiDL(obj.as_ptr())
+) -> bool {
+    initialize_dart_api_dl(obj.as_ptr()).is_ok()
 }
