@@ -64,6 +64,8 @@ simple_logger = "4.0"
 [target.'cfg(not(target_family = "wasm"))'.dependencies]
 dart-sys = "2.0"
 libc = "0.2"
+anyhow = "1.0.66"
+flutter_rust_bridge = "=1.58.2"
 
 [target.'cfg(target_family = "wasm")'.dependencies]
 backoff = { version = "0.4", features = ["wasm-bindgen"] }
@@ -74,7 +76,7 @@ wasm-bindgen-futures = "0.4"
 wasm-logger = "0.2"
 wee_alloc = { version = "0.4", optional = true }
 [target.'cfg(target_family = "wasm")'.dependencies.web-sys]
-    version = "0.3.60"
+    version = "0.3.47"
     features = [
         "console",
         "ConstrainDomStringParameters", "ConstrainDoubleRange",

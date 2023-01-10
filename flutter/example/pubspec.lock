@@ -171,21 +171,21 @@ packages:
       name: flutter_gherkin
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.0-rc.9"
+    version: "3.0.0-rc.17"
   flutter_rust_bridge:
     dependency: transitive
     description:
       name: flutter_rust_bridge
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.54.0"
+    version: "1.58.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
   freezed_annotation:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
@@ -202,7 +202,7 @@ packages:
       name: gherkin
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.8"
+    version: "3.1.0"
   glob:
     dependency: transitive
     description:
@@ -277,7 +277,7 @@ packages:
       name: medea_flutter_webrtc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.0-dev+rev.39f8181e33a20db445d16c1bfedd7d337a777fe3"
+    version: "0.8.0-dev+rev.f41943bb2e00fbeac92946cc89652fe04185a394"
   medea_jason:
     dependency: "direct main"
     description:

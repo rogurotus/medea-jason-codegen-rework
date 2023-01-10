@@ -6,7 +6,7 @@ import '../util/move_semantic.dart';
 import 'exceptions.dart';
 import 'jason_wasm.dart' as wasm;
 
-class WebLocalMediaTrack implements LocalMediaTrack {
+class WebLocalMediaTrack extends LocalMediaTrack {
   late wasm.LocalMediaTrack obj;
 
   WebLocalMediaTrack(this.obj);
@@ -29,7 +29,7 @@ class WebLocalMediaTrack implements LocalMediaTrack {
 
   @moveSemantics
   @override
-  Future<void> free() async {
+  void free() {
     obj.free();
   }
 }
