@@ -1204,7 +1204,7 @@ dependencies = [
 [[package]]
 name = "flutter_rust_bridge"
 version = "1.60.0"
-source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#5982ccd9888cb7ac3616d86c1764fda333da91ff"
+source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#478ee023ceefda52e661b13e4b070fe0a34d803d"
 dependencies = [
  "allo-isolate",
  "anyhow",
@@ -1229,7 +1229,7 @@ dependencies = [
 [[package]]
 name = "flutter_rust_bridge_macros"
 version = "1.60.0"
-source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#5982ccd9888cb7ac3616d86c1764fda333da91ff"
+source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#478ee023ceefda52e661b13e4b070fe0a34d803d"
 
 [[package]]
 name = "fnv"
@@ -3944,7 +3944,7 @@ dependencies = [
 [[package]]
 name = "xayn-dart-api-dl"
 version = "0.3.0+2.0.0"
-source = "git+https://github.com/rogurotus/xayn_dart_api_dl.git?branch=temp#b5c60b99620304ff0cb0d88a938e1a3faec1afcf"
+source = "git+https://github.com/rogurotus/xayn_dart_api_dl.git?branch=temp#5321e7e8266c27dc3a7e7f517c0785e79cb00134"
 dependencies = [
  "displaydoc",
  "once_cell",
@@ -3956,7 +3956,7 @@ dependencies = [
 [[package]]
 name = "xayn-dart-api-dl-sys"
 version = "0.3.0+2.0.0"
-source = "git+https://github.com/rogurotus/xayn_dart_api_dl.git?branch=temp#b5c60b99620304ff0cb0d88a938e1a3faec1afcf"
+source = "git+https://github.com/rogurotus/xayn_dart_api_dl.git?branch=temp#5321e7e8266c27dc3a7e7f517c0785e79cb00134"
 dependencies = [
  "bindgen",
  "cc",
