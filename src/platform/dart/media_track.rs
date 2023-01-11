@@ -4,8 +4,8 @@
 
 use std::future::Future;
 
-use xayn_dart_api_dl_sys::Dart_Handle;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
     media::{

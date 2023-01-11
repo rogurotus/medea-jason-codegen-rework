@@ -2,9 +2,9 @@
 
 use std::{borrow::Cow, ptr};
 
-use xayn_dart_api_dl_sys::Dart_Handle;
 use derive_more::Into;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
     api::{
@@ -24,8 +24,8 @@ use crate::{
 mod exception {
     use std::ptr;
 
-    use xayn_dart_api_dl_sys::Dart_Handle;
     use libc::c_char;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValue;
 

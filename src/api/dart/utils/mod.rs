@@ -1,6 +1,6 @@
 mod err;
-mod result;
 mod frb_adapter;
+mod result;
 
 use std::{future::Future, marker::PhantomData};
 

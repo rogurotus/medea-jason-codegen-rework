@@ -25,9 +25,9 @@ use std::{
     panic, ptr,
 };
 
-use xayn_dart_api_dl_sys::{Dart_Handle, _Dart_Handle};
 use derive_more::Display;
 use libc::c_char;
+use xayn_dart_api_dl_sys::{Dart_Handle, _Dart_Handle};
 
 use crate::{
     api::dart::utils::new_panic_error,

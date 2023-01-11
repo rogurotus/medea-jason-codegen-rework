@@ -4,9 +4,9 @@
 //! [0]: https://w3.org/TR/mediacapture-streams#media-track-constraints
 //! [1]: https://w3.org/TR/mediacapture-streams#mediastreamconstraints
 
-use xayn_dart_api_dl_sys::Dart_Handle;
 use derive_more::From;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
     api::DartValue,

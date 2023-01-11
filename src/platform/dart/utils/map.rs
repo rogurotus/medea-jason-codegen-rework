@@ -2,8 +2,8 @@
 //!
 //! [`Map`]: https://api.dart.dev/stable/dart-core/Map-class.html
 
-use xayn_dart_api_dl_sys::Dart_Handle;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
     api::DartValue,

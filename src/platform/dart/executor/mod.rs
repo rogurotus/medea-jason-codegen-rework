@@ -4,7 +4,9 @@ mod task;
 
 use std::{future::Future, ptr, rc::Rc};
 
-use xayn_dart_api_dl_sys::{Dart_CObject, Dart_CObject_Type, Dart_Port, _Dart_CObject__bindgen_ty_1};
+use xayn_dart_api_dl_sys::{
+    Dart_CObject, Dart_CObject_Type, Dart_Port, _Dart_CObject__bindgen_ty_1,
+};
 
 use crate::{
     api::propagate_panic,
@@ -61,7 +63,9 @@ fn task_wake(task: Rc<Task>) {
 
     let mut task_addr = Dart_CObject {
         type_: Dart_CObject_Type::Dart_CObject_kInt64,
-        value: _Dart_CObject__bindgen_ty_1 { as_int64: task as i64 },
+        value: _Dart_CObject__bindgen_ty_1 {
+            as_int64: task as i64,
+        },
     };
 
     let enqueued =

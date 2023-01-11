@@ -22,17 +22,20 @@ use crate::{
 mod callback {
     use std::ptr;
 
-
     use crate::platform::dart::utils::callback::Callback;
 
     extern "C" {
         /// Returns a [`Dart_Handle`] to a newly created Dart callback accepting
         /// 2 arguments that will proxy calls to the given Rust callback.
-        pub fn call_two_arg_proxy(cb: ptr::NonNull<Callback>) -> xayn_dart_api_dl_sys::Dart_Handle;
+        pub fn call_two_arg_proxy(
+            cb: ptr::NonNull<Callback>,
+        ) -> xayn_dart_api_dl_sys::Dart_Handle;
 
         /// Returns a [`Dart_Handle`] to a newly created Dart callback that will
         /// proxy calls to the associated Rust callback.
-        pub fn call_proxy(cb: ptr::NonNull<Callback>) -> xayn_dart_api_dl_sys::Dart_Handle;
+        pub fn call_proxy(
+            cb: ptr::NonNull<Callback>,
+        ) -> xayn_dart_api_dl_sys::Dart_Handle;
     }
 }
 

@@ -2,9 +2,9 @@
 //!
 //! [1]: https://w3.org/TR/webrtc/#dom-rtcpeerconnection
 
-use xayn_dart_api_dl_sys::Dart_Handle;
 use derive_more::From;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::platform::dart::utils::{dart_string_into_rust, handle::DartHandle};
 

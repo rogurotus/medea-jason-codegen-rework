@@ -9,8 +9,8 @@
 
 use std::marker::PhantomData;
 
-use xayn_dart_api_dl_sys::{Dart_Handle, Dart_PersistentHandle};
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::{Dart_Handle, Dart_PersistentHandle};
 
 use crate::{api::DartValue, platform::Callback};
 

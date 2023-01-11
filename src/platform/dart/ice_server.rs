@@ -2,9 +2,9 @@
 //!
 //! [1]: https://w3.org/TR/webrtc/#rtciceserver-dictionary
 
-use xayn_dart_api_dl_sys::Dart_Handle;
 use medea_client_api_proto::IceServer;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::platform::utils::{handle::DartHandle, string_into_c_str};
 
