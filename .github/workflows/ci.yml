@@ -494,7 +494,9 @@ jobs:
         if: ${{ env.CACHE == 'true' }}
 
       - name: Install android deps
-        run: sudo apt-get install libc6-dev-arm64-cross
+        run: |
+          sudo apt-get install libc6-dev-arm64-cross
+          sudo dnf install glibc-headers
         if: ${{ matrix.platform == 'android' }}
 
       - uses: actions-rs/install@v0.1
