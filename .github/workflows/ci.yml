@@ -391,9 +391,7 @@ jobs:
         if: ${{ matrix.platform == 'android' }}
 
       - name: Install android deps
-        run: |
-          sudo apt-get install libc6-dev-arm64-cross
-          sudo apt-get install gcc-multilib 
+        run: xcode-select --install
         if: ${{ matrix.platform == 'android' }}
 
       - uses: subosito/flutter-action@v2
