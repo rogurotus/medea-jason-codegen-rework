@@ -493,8 +493,9 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         if: ${{ env.CACHE == 'true' }}
 
-      - run: xcode-select --install
-        if: ${{ matrix.platform == 'android'}}
+      - name: Install android deps
+        run: sudo apt-get install libc6-dev-arm64-cross
+        if: ${{ matrix.platform == 'android' }}
 
       - uses: actions-rs/install@v0.1
         with:
