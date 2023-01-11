@@ -493,6 +493,9 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         if: ${{ env.CACHE == 'true' }}
 
+      - run: xcode-select --install
+        if: ${{ matrix.platform == 'android'}}
+
       - uses: actions-rs/install@v0.1
         with:
           crate: cargo-ndk
