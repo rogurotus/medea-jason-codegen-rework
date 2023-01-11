@@ -390,6 +390,12 @@ jobs:
           use-tool-cache: true
         if: ${{ matrix.platform == 'android' }}
 
+      - name: Install android deps
+        run: |
+          sudo apt-get install libc6-dev-arm64-cross
+          sudo apt-get install gcc-multilib 
+        if: ${{ matrix.platform == 'android' }}
+
       - uses: subosito/flutter-action@v2
       - run: flutter config --enable-linux-desktop
         if: ${{ matrix.platform == 'linux' }}

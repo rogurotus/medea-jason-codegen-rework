@@ -271,7 +271,7 @@ packages:
     description:
       path: "."
       ref: temp-frb-deps
-      resolved-ref: eead79a8000104221e05cffb0fab227b79d34eda
+      resolved-ref: "7c815df3ee7c9cab48a2582a0a447d56032b5637"
       url: "https://github.com/instrumentisto/flutter-webrtc.git"
     source: git
     version: "0.8.0-dev"
