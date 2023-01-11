@@ -496,7 +496,7 @@ jobs:
       - name: Install android deps
         run: |
           sudo apt-get install libc6-dev-arm64-cross
-          sudo dnf install glibc-headers
+          sudo apt-get install gcc-multilib 
         if: ${{ matrix.platform == 'android' }}
 
       - uses: actions-rs/install@v0.1
