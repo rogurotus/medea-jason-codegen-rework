@@ -380,9 +380,7 @@ jobs:
         with:
           toolchain: stable
       - run: make rustup.targets only=${{ matrix.platform }}
-      - uses: Swatinem/rust-cache@v2
-        if: ${{ env.CACHE == 'true'
-             && matrix.platform != 'windows' }}
+
 
       - uses: actions-rs/install@v0.1
         with:
