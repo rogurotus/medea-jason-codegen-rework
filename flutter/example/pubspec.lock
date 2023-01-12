@@ -170,7 +170,7 @@ packages:
     description:
       path: frb_dart
       ref: dart-api-dl
-      resolved-ref: "478ee023ceefda52e661b13e4b070fe0a34d803d"
+      resolved-ref: daffd7635ff0fc267246d07017960ff29d728d99
       url: "https://github.com/rogurotus/flutter_rust_bridge.git"
     source: git
     version: "1.60.0"
@@ -295,7 +295,7 @@ packages:
       name: mime
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.4"
   package_config:
     dependency: transitive
     description:
@@ -510,7 +510,7 @@ packages:
       name: web_socket_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0"
+    version: "2.3.0"
   webdriver:
     dependency: transitive
     description:

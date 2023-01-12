@@ -286,9 +286,9 @@ dependencies = [
 
 [[package]]
 name = "allo-isolate"
-version = "0.1.14-beta.4"
+version = "0.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "692305cf262038708c09c56dd7c7d5387578b032456b427331703fffaa682c49"
+checksum = "8ed55848be9f41d44c79df6045b680a74a78bc579e0813f7f196cd7928e22fb1"
 dependencies = [
  "anyhow",
  "atomic",
@@ -1204,7 +1204,7 @@ dependencies = [
 [[package]]
 name = "flutter_rust_bridge"
 version = "1.60.0"
-source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#478ee023ceefda52e661b13e4b070fe0a34d803d"
+source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#daffd7635ff0fc267246d07017960ff29d728d99"
 dependencies = [
  "allo-isolate",
  "anyhow",
@@ -1229,7 +1229,7 @@ dependencies = [
 [[package]]
 name = "flutter_rust_bridge_macros"
 version = "1.60.0"
-source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#478ee023ceefda52e661b13e4b070fe0a34d803d"
+source = "git+https://github.com/rogurotus/flutter_rust_bridge.git?branch=dart-api-dl#daffd7635ff0fc267246d07017960ff29d728d99"
 
 [[package]]
 name = "fnv"
@@ -2254,9 +2254,9 @@ dependencies = [
 
 [[package]]
 name = "parking_lot_core"
-version = "0.9.5"
+version = "0.9.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7ff9f3fef3968a3ec5945535ed654cb38ff72d7495a25619e2247fb15a2ed9ba"
+checksum = "ba1ef8814b5c993410bb3adfad7a5ed269563e4a2f90c41f5d85be7fb47133bf"
 dependencies = [
  "cfg-if 1.0.0",
  "libc",
