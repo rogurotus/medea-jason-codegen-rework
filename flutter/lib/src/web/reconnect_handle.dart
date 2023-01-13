@@ -3,7 +3,7 @@ import '../util/move_semantic.dart';
 import 'exceptions.dart';
 import 'jason_wasm.dart' as wasm;
 
-class WebReconnectHandle implements ReconnectHandle {
+class WebReconnectHandle extends ReconnectHandle {
   late wasm.ReconnectHandle obj;
 
   WebReconnectHandle(this.obj);

@@ -4,18 +4,18 @@
 
 use std::future::Future;
 
-use dart_sys::Dart_Handle;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
-    api::dart_string_into_rust,
     media::{
         track::MediaStreamTrackState, FacingMode, MediaKind, MediaSourceKind,
     },
     platform::{
         self,
         dart::utils::{
-            callback::Callback, handle::DartHandle, NonNullDartValueArgExt as _,
+            callback::Callback, dart_string_into_rust, handle::DartHandle,
+            NonNullDartValueArgExt as _,
         },
         utils::dart_future::FutureFromDart,
     },
@@ -25,7 +25,7 @@ use crate::{
 mod media_stream_track {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

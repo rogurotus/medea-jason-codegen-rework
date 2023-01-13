@@ -2,14 +2,14 @@
 
 use std::{borrow::Cow, ptr};
 
-use dart_sys::Dart_Handle;
 use derive_more::Into;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
     api::{
         box_dart_handle,
-        dart::{utils::string_into_c_str, DartValue},
+        dart::DartValue,
         err::{
             EnumerateDevicesException, FormatException, InternalException,
             InvalidOutputAudioDeviceIdException, LocalMediaInitException,
@@ -17,15 +17,15 @@ use crate::{
             MicVolumeException, RpcClientException, StateError,
         },
     },
-    platform,
+    platform::{self, utils::string_into_c_str},
 };
 
 #[dart_bridge("flutter/lib/src/native/ffi/exception.g.dart")]
 mod exception {
     use std::ptr;
 
-    use dart_sys::Dart_Handle;
     use libc::c_char;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValue;
 

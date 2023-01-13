@@ -2,19 +2,19 @@
 //!
 //! [`Map`]: https://api.dart.dev/stable/dart-core/Map-class.html
 
-use dart_sys::Dart_Handle;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use crate::{
-    api::{string_into_c_str, DartValue},
-    platform::dart::utils::handle::DartHandle,
+    api::DartValue,
+    platform::dart::utils::{handle::DartHandle, string_into_c_str},
 };
 
 #[dart_bridge("flutter/lib/src/native/ffi/map.g.dart")]
 mod map {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValue;
 

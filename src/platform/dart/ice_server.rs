@@ -2,17 +2,17 @@
 //!
 //! [1]: https://w3.org/TR/webrtc/#rtciceserver-dictionary
 
-use dart_sys::Dart_Handle;
 use medea_client_api_proto::IceServer;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
-use crate::{api::string_into_c_str, platform::utils::handle::DartHandle};
+use crate::platform::utils::{handle::DartHandle, string_into_c_str};
 
 #[dart_bridge("flutter/lib/src/native/platform/ice_servers.g.dart")]
 mod ice_servers {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

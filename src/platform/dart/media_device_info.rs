@@ -5,16 +5,17 @@
 use medea_macro::dart_bridge;
 
 use crate::{
-    api::dart_string_into_rust,
     media::MediaDeviceKind,
-    platform::dart::utils::{handle::DartHandle, NonNullDartValueArgExt},
+    platform::dart::utils::{
+        dart_string_into_rust, handle::DartHandle, NonNullDartValueArgExt,
+    },
 };
 
 #[dart_bridge("flutter/lib/src/native/platform/media_device_info.g.dart")]
 mod media_device_info {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

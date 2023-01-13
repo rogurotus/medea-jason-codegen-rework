@@ -15,7 +15,7 @@ import 'local_media_track.dart';
 import 'media_device_info.dart';
 import 'media_stream_settings.dart';
 
-class WebMediaManagerHandle implements MediaManagerHandle {
+class WebMediaManagerHandle extends MediaManagerHandle {
   late wasm.MediaManagerHandle obj;
 
   WebMediaManagerHandle(this.obj);

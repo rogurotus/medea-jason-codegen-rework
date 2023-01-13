@@ -1,21 +1,12 @@
+import '../native/ffi/jason_api.g.dart' show MediaDeviceKind;
 import '/src/util/rust_handles_storage.dart';
 
-/// Kind of a media device.
-enum MediaDeviceKind {
-  /// Audio input device (for example, a microphone).
-  audioinput,
-
-  /// Video input device (for example, a webcam).
-  videoinput,
-
-  /// Audio output device (for example, a pair of headphones).
-  audiooutput,
-}
+export '../native/ffi/jason_api.g.dart' show MediaDeviceKind;
 
 /// [`MediaDeviceInfo`][1] interface.
 ///
 /// [1]: https://w3.org/TR/mediacapture-streams#device-info
-abstract class MediaDeviceInfo implements SyncPlatformHandle {
+abstract class MediaDeviceInfo implements PlatformHandle {
   /// Returns an unique identifier of the represented device.
   String deviceId();
 

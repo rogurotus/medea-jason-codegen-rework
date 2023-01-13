@@ -1,7 +1,7 @@
 //! Wrapper for Dart exceptions.
 
-use dart_sys::Dart_Handle;
 use derive_more::Display;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
 use super::utils::handle::DartHandle;
 

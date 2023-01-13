@@ -2,19 +2,17 @@
 //!
 //! [1]: https://w3.org/TR/webrtc/#dom-rtcpeerconnection
 
-use dart_sys::Dart_Handle;
 use derive_more::From;
 use medea_macro::dart_bridge;
+use xayn_dart_api_dl_sys::Dart_Handle;
 
-use crate::{
-    api::dart_string_into_rust, platform::dart::utils::handle::DartHandle,
-};
+use crate::platform::dart::utils::{dart_string_into_rust, handle::DartHandle};
 
 #[dart_bridge("flutter/lib/src/native/platform/ice_candidate.g.dart")]
 mod ice_candidate {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

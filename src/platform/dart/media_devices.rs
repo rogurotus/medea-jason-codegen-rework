@@ -6,11 +6,11 @@ use medea_macro::dart_bridge;
 use tracerr::Traced;
 
 use crate::{
-    api::string_into_c_str,
     media::MediaSourceKind,
     platform::{
         dart::utils::{
             dart_future::FutureFromDart, handle::DartHandle, list::DartList,
+            string_into_c_str,
         },
         utils::callback::Callback,
         Error, GetUserMediaError,
@@ -28,7 +28,7 @@ use super::{
 mod media_devices {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     extern "C" {
         /// Returns information about available media input devices.

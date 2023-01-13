@@ -3,17 +3,15 @@
 use derive_more::From;
 use medea_macro::dart_bridge;
 
-use crate::{
-    api::dart_string_into_rust, platform::dart::utils::handle::DartHandle,
-};
+use crate::platform::dart::utils::handle::DartHandle;
 
-use super::utils::NonNullDartValueArgExt as _;
+use super::utils::{dart_string_into_rust, NonNullDartValueArgExt as _};
 
 #[dart_bridge("flutter/lib/src/native/platform/media_display_info.g.dart")]
 mod media_display_info {
     use std::{os::raw::c_char, ptr};
 
-    use dart_sys::Dart_Handle;
+    use xayn_dart_api_dl_sys::Dart_Handle;
 
     use crate::api::DartValueArg;
 

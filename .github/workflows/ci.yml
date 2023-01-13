@@ -380,14 +380,25 @@ jobs:
         with:
           toolchain: stable
       - run: make rustup.targets only=${{ matrix.platform }}
-      - uses: Swatinem/rust-cache@v2
-        if: ${{ env.CACHE == 'true'
-             && matrix.platform != 'windows' }}
+
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v1
+        with:
+          version: "10.0"
+          directory: ${{ runner.temp }}/llvm
+        if: ${{ matrix.platform == 'windows' }}
+
+      - run: git config --system core.longpaths true
+        if: ${{ matrix.platform == 'windows' }}
 
       - uses: actions-rs/install@v0.1
         with:
           crate: cargo-ndk
           use-tool-cache: true
+        if: ${{ matrix.platform == 'android' }}
+
+      - name: Install android deps
+        run: brew install gcc binutils bison
         if: ${{ matrix.platform == 'android' }}
 
       - uses: subosito/flutter-action@v2
@@ -492,6 +503,12 @@ jobs:
       - run: make rustup.targets only=${{ matrix.platform }}
       - uses: Swatinem/rust-cache@v2
         if: ${{ env.CACHE == 'true' }}
+
+      - name: Install android deps
+        run: |
+          sudo apt-get install libc6-dev-arm64-cross
+          sudo apt-get install gcc-multilib 
+        if: ${{ matrix.platform == 'android' }}
 
       - uses: actions-rs/install@v0.1
         with:

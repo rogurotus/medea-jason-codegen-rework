@@ -3,7 +3,7 @@ import '../util/move_semantic.dart';
 import 'exceptions.dart';
 import 'jason_wasm.dart' as wasm;
 
-class AudioTrackConstraints implements base.AudioTrackConstraints {
+class AudioTrackConstraints extends base.AudioTrackConstraints {
   final wasm.AudioTrackConstraints obj = wasm.AudioTrackConstraints();
 
   @override

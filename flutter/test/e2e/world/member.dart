@@ -243,9 +243,10 @@ class Member {
 
   /// Frees all the [LocalMediaTrack]s of this [Member].
   Future<void> forget_local_tracks() async {
-    for (var track in connection_store.local_tracks) {
-      await track.free();
-    }
+    connection_store.local_tracks.forEach((track) {
+      track.free();
+    });
+    await Future.delayed(Duration(milliseconds: 100));
   }
 
   /// Waits for a [ConnectionHandle] from the [Member] with the provided [id].
