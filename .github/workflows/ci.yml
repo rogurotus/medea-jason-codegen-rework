@@ -389,6 +389,7 @@ jobs:
         if: ${{ matrix.platform == 'windows' }}
 
       - run: git config --system core.longpaths true
+        if: ${{ matrix.platform == 'windows' }}
 
       - uses: actions-rs/install@v0.1
         with:
